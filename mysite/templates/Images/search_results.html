@@ -1,0 +1,16 @@
+{% extends 'Images/base.html' %}
+    {% block content %}
+    <h2>По запросу '{{search_string}}' найдено:</h2>
+    <tr>
+    {% for image in objects %}
+    <td>
+    <div class="products">
+	    <a href="http://127.0.0.1:8000/images/{{image.id}}">
+	        <p>{{image}}</p>
+	        <img src="{{image.image.url}}">
+	    </a>
+	</div>  
+	</td>  
+    {% endfor %}
+    </tr>
+    {% endblock %}

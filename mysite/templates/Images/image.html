@@ -1,0 +1,24 @@
+{% extends 'Images/base.html' %}
+    {% block content %}
+	    <div class="product">
+	        <h1>{{image.name}}</h1>
+	        <a href="http://127.0.0.1:8000/images/{{image_id}}/full_image">
+	        <img src="{{image.image.url}}">
+	        </a>
+	        <h2>Описание:</h2>
+	        <p>{{image.description}}</p>
+	        <h2>Дата создания</h2>
+	        <p>{{image.date}}</p>
+	    </div>			
+			<table>
+	        <td>
+		    	<div class="add_product">
+	                    <input type="submit" value="Изменить информацию" onclick="window.location='http://127.0.0.1:8000/images/{{image_id}}/edit'"></input>
+	                    <form method="post" action="http://127.0.0.1:8000/images/{{image_id}}/">
+		    			{% csrf_token %}
+	                    <input type="submit" value="Удалить изображение">
+	                    </form>
+	            </div>
+	        </td>
+            </table>
+    {% endblock %}

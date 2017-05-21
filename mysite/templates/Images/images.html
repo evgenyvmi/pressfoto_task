@@ -1,0 +1,16 @@
+{% extends 'Images/base.html' %}
+{% block content %}
+<table class="catalog">
+<tr>
+    {% for image in images %}
+    <td>
+    <div class="products">
+    	<a href="{{ image.id }}">
+	        <p>{{image.name}}</p>
+	        <img src="{{image.image.url}}">
+	    </a>
+	</div>  
+	</td>  
+    {% endfor %}
+</tr>
+{% endblock %}

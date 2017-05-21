@@ -1,0 +1,6 @@
+*.pyc
+*~
+__pycache__
+myvenv
+/static_cdn
+/media_cdn

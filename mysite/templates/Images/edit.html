@@ -1,0 +1,17 @@
+{% extends 'Images/base.html' %}
+    {% block content %}
+    <div class="edit_image">
+    <img src="{{image.url}}">
+    </div>
+    <form method="POST", enctype="multipart/form-data">
+		<table>
+			<td>
+				{% csrf_token %}
+	            {{form.as_p}}
+	            <div class="add_product">
+	                    <input type="submit" value="OK">
+	            </div>
+	        </td>
+        </table>
+    </form>
+    {% endblock %}
